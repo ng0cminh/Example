@@ -97,6 +97,7 @@ img {
 
 .img-fluid img {
     display: block;
+    width: 100%;
 }
 
 .container {
