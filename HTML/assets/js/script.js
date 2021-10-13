@@ -1,17 +1,31 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-const navMobileBtn = $('.main-menu .nav-mobile-btn');
-const navOverlayElement = $('.main-menu .nav-overlay');
-const navMobileClose = $('.main-menu .nav-mobile-close');
-const mainNavbarsElement = $('.main-menu .navbars');
+const mainMenu = $(".main-menu");
+const navMobileBtn = $(".main-menu .nav-mobile-btn");
+const navOverlayElement = $(".main-menu .nav-overlay");
+const navMobileClose = $(".main-menu .nav-mobile-close");
+const mainNavbarsElement = $(".main-menu .navbars");
 
+// Menu Scroll fix
+let prevScrollpos = window.pageYOffset;
 
-function addShowClass (elementClick) {
-    elementClick.onclick = (e) => {
-        navOverlayElement.classList.toggle('show');
-        mainNavbarsElement.classList.toggle('show');
-    }
+window.onscroll = function () {
+  let currentScrollPos = window.pageYOffset;
+
+  if (prevScrollpos > currentScrollPos) {
+    mainMenu.style.top = "0";
+  } else {
+    mainMenu.style.top = "-60px";
+  }
+  prevScrollpos = currentScrollPos;
+};
+
+function addShowClass(elementClick) {
+  elementClick.onclick = (e) => {
+    navOverlayElement.classList.toggle("show");
+    mainNavbarsElement.classList.toggle("show");
+  };
 }
 
 addShowClass(navMobileBtn);
@@ -19,19 +33,19 @@ addShowClass(navMobileClose);
 addShowClass(navOverlayElement);
 
 // Menu Main Search
-const mainMenuSeach = $('.main-menu .nav-search-btn');
-const mainSeachInput = $('.main-menu .search-input');
-const mainSeachClose = $('.main-menu .nav-search-close');
+const mainMenuSeach = $(".main-menu .nav-search-btn");
+const mainSeachInput = $(".main-menu .search-input");
+const mainSeachClose = $(".main-menu .nav-search-close");
 
 mainMenuSeach.onclick = (e) => {
-    mainSeachInput.classList.add('show');
-    mainSeachClose.classList.add('show');
-    mainMenuSeach.classList.remove('show');
-    mainSeachInput.focus();
-}
+  mainSeachInput.classList.add("show");
+  mainSeachClose.classList.add("show");
+  mainMenuSeach.classList.remove("show");
+  mainSeachInput.focus();
+};
 
 mainSeachClose.onclick = (e) => {
-    mainSeachInput.classList.remove('show');
-    mainSeachClose.classList.remove('show');
-    mainMenuSeach.classList.add('show');
-}
+  mainSeachInput.classList.remove("show");
+  mainSeachClose.classList.remove("show");
+  mainMenuSeach.classList.add("show");
+};
