@@ -7,16 +7,16 @@ const navOverlayElement = $(".main-menu .nav-overlay");
 const navMobileClose = $(".main-menu .nav-mobile-close");
 const mainNavbarsElement = $(".main-menu .navbars");
 
-function addShowClass(elementClick) {
+function addShowClassNav(elementClick) {
   elementClick.onclick = (e) => {
     navOverlayElement.classList.toggle("show");
     mainNavbarsElement.classList.toggle("show");
   };
 }
 
-addShowClass(navMobileBtn);
-addShowClass(navMobileClose);
-addShowClass(navOverlayElement);
+addShowClassNav(navMobileBtn);
+addShowClassNav(navMobileClose);
+addShowClassNav(navOverlayElement);
 
 // Menu Main Search
 const mainMenuSeach = $(".main-menu .nav-search-btn");
@@ -34,4 +34,12 @@ mainSeachClose.onclick = (e) => {
   mainSeachInput.classList.remove("show");
   mainSeachClose.classList.remove("show");
   mainMenuSeach.classList.add("show");
+};
+
+const sidebar = $(".sidebar");
+const tableContent = $(".table-content");
+
+tableContent.onclick = (e) => {
+  sidebar.classList.toggle("show");
+  tableContent.classList.toggle("show");
 };
