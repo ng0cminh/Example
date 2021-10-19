@@ -7,20 +7,6 @@ const navOverlayElement = $(".main-menu .nav-overlay");
 const navMobileClose = $(".main-menu .nav-mobile-close");
 const mainNavbarsElement = $(".main-menu .navbars");
 
-// Menu Scroll fix
-let prevScrollpos = window.pageYOffset;
-
-window.onscroll = function () {
-  let currentScrollPos = window.pageYOffset;
-
-  if (prevScrollpos > currentScrollPos) {
-    mainMenu.style.top = "0";
-  } else {
-    mainMenu.style.top = "-60px";
-  }
-  prevScrollpos = currentScrollPos;
-};
-
 function addShowClass(elementClick) {
   elementClick.onclick = (e) => {
     navOverlayElement.classList.toggle("show");

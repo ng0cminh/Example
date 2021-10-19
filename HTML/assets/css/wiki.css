@@ -1,6 +1,20 @@
-.wiki {
-  background-color: var(--white-color);
+.main-content.wiki {
+  margin: 0px;
   font-size: 1.6rem;
+}
+.wiki .content,
+.wiki .sidebar {
+  padding: 30px 0px;
+}
+.wiki .content {
+  background-color: var(--white-color);
+  margin-left: -999px;
+  padding-left: 999px;
+  padding-right: 30px;
+  margin-right: 0px;
+}
+.main-content.wiki .sidebar {
+  margin-left: 0px;
 }
 .wiki a {
   color: var(--link-color);
@@ -9,12 +23,21 @@
   color: var(--link-color-hover);
   text-decoration: underline;
 }
-
-.wiki .main-content {
-  margin: 0px;
+.wiki .wiki-main blockquote {
+  background-color: rgba(255, 229, 100, 0.3);
+  border-left-color: #ffe564;
+  border-left-width: 9px;
+  border-left-style: solid;
+  padding: 20px 45px 20px 26px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-left: -30px;
+  margin-right: -30px;
 }
 .wiki .sidebar-nav {
-  position: relative;
+  position: sticky;
+  top: 56px;
+  padding-top: 25px;
 }
 .wiki .sidebar {
   background-color: rgb(247, 247, 247);
