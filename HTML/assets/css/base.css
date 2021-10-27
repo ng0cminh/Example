@@ -4,7 +4,7 @@
   --text-color: rgb(69, 69, 69); /* Màu chữ cho web */
   --link-color: #007bff; /* Màu cho link trong văn bản */
   --link-color-hover: #087cce; /* Màu cho link trong văn bản khi hover */
-  --bg-color: #f0f2f5;
+  --bg-color: rgb(247, 247, 247);
   --bg-top: #1e73be;
   --border-color: #dee2e6;
   --hover-color: #b52759;
