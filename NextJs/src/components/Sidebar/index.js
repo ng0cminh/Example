@@ -2,13 +2,13 @@
 import FeaturedBox from "../Widgets/FeaturedBox";
 import AboutBox from "../Widgets/AboutBox";
 
-const Sidebar = () => {
-    return (
-        <aside className="sidebar" id="sidebar">
-            <AboutBox />
-            <FeaturedBox />
-        </aside>
-    )
-}
+const Sidebar = ({ featuredPosts }) => {
+  return (
+    <aside className="sidebar" id="sidebar">
+      <AboutBox />
+      <FeaturedBox featuredPosts={featuredPosts} />
+    </aside>
+  );
+};
 
 export default Sidebar;

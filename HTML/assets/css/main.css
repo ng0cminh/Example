@@ -21,7 +21,8 @@
   box-shadow: 0 10px 20px rgb(188 188 188 / 80%);
 }
 
-.article .article-header {
+.article .article-header,
+.wiki-article .wiki-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -145,6 +146,11 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
+}
+@media (max-width: 740px) {
+  .footer .back-to-top.is-wiki {
+    display: none;
+  }
 }
 .footer .back-to-top .back-top {
   margin: 0px;

@@ -1,18 +1,18 @@
 import PostCard from "./PostCard";
-import Pagination from "./Pagination";
 
-const BlogList = ({posts}) => {
-    return (
-        <section id="content" className="content">
-            {posts.map((post, index) => {
-                    return (
-                        <PostCard post={post} key={index} />
-                    )
-                }
-            )}
-            <Pagination />
-        </section>
-    )
-}
+const BlogList = ({ posts, imgWidth, imgHeight }) => {
+  return (
+    <div className="row">
+      {posts.map((post, index) => (
+        <PostCard
+          key={post.slug + "-" + index}
+          post={post}
+          imgWidth={imgWidth}
+          imgHeight={imgHeight}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default BlogList;

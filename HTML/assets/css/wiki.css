@@ -13,10 +13,42 @@
   padding-right: 30px;
   margin-right: 0px;
 }
+
+.wiki .wiki-name-author a {
+  color: var(--hover-color);
+  font-weight: bold;
+}
+
+.wiki-body p,
+.wiki-body li {
+  overflow-wrap: anywhere;
+}
+
+.wiki-body h1,
+.wiki-body h2,
+.wiki-body h3,
+.wiki-body h4,
+.wiki-body h5 {
+  scroll-margin-top: 80px;
+}
+.wiki-body img {
+  display: block;
+  width: 95%;
+  margin: 0 auto;
+}
+.wiki-body .anchor {
+  margin-left: -20px;
+  padding-right: 4px;
+  float: left;
+}
+.wiki-body .anchor:hover {
+  text-decoration: none;
+}
 .main-content.wiki .sidebar {
   margin-left: 0px;
 }
-.wiki a {
+
+.wiki-body a {
   color: var(--link-color);
 }
 .wiki a:hover {
@@ -34,6 +66,37 @@
   margin-left: 0px;
   margin-right: 0px;
 }
+
+.post-pagination {
+  display: flex;
+  padding: 15px 0px;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  margin-top: 30px;
+  border-top: 1px solid var(--border-color);
+}
+.post-pagination .prev-post {
+  padding-right: 25px;
+  text-align: left;
+}
+
+.post-pagination .next-post {
+  padding-left: 25px;
+  text-align: right;
+}
+.post-pagination span {
+  display: block;
+  color: var(--bg-footer);
+}
+.post-pagination a {
+  line-height: 3.2rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.post-pagination a:hover {
+  color: var(--bg-top);
+}
+/* Side bar */
 .wiki .sidebar-nav {
   position: sticky;
   top: 56px;
@@ -46,6 +109,11 @@
 .wiki .sidebar ul {
   margin: 0px;
   padding-left: 25px;
+}
+@media (max-width: 740px) {
+  .wiki .sidebar ul {
+    padding-right: 25px;
+  }
 }
 .wiki .sidebar-list .list-item {
   list-style: none;
