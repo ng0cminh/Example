@@ -38,8 +38,9 @@ mainSeachClose.onclick = (e) => {
 
 const sidebar = $(".sidebar");
 const tableContent = $(".table-content");
-
-tableContent.onclick = (e) => {
-  sidebar.classList.toggle("show");
-  tableContent.classList.toggle("show");
-};
+if (tableContent) {
+  tableContent.onclick = () => {
+    sidebar.classList.toggle("show");
+    tableContent.classList.toggle("show");
+  };
+}

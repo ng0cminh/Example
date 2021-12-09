@@ -6,15 +6,34 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cache-posts": "node scripts/cache.js",
+    "postbuild": "next-sitemap --config config-sitemap.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run cache-posts && git add cache/data.js"
+    }
   },
   "dependencies": {
+    "@auth0/auth0-react": "^1.4.0",
+    "date-fns": "^2.19.0",
+    "gray-matter": "^4.0.3",
+    "ioredis": "^4.27.1",
+    "markdown-it": "^12.2.0",
+    "nanoid": "^3.1.22",
     "next": "11.1.2",
+    "next-sitemap": "^1.6.168",
+    "node-html-parser": "^5.0.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "sharp": "^0.29.2",
+    "slug": "^5.1.0",
+    "swr": "^0.5.5"
   },
   "devDependencies": {
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2"
+    "eslint-config-next": "11.1.2",
+    "husky": "^7.0.2"
   }
 }
